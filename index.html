@@ -28,7 +28,12 @@
         return false;
       });
       socket.on('chat_out', function(msg){
+        console.log('[CHAT] ' + msg);
         $('#messages').append($('<li>').text(msg));
+      });
+      socket.on('connection', function(something) {
+        $('#messages').append($('<li>').text('connected.'));
+        console.log('connected.');
       });
     </script>
   </body>
